@@ -21,7 +21,7 @@ resource "azurerm_linux_function_app" "main" {
 
   site_config {
     application_stack {
-      dotnet_version = "v6.0"
+      dotnet_version = "v8.0"
     }
     cors {
       allowed_origins     = ["https://portal.azure.com"]
