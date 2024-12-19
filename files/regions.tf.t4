@@ -11,9 +11,6 @@ module "region_stamp_primary" {
   tags            = local.all_tags
 
   secrets = {
-    "ApplicationInsights-InstrumentationKey" = azurerm_application_insights.main.instrumentation_key
-    "ApplicationInsights-AppId"              = azurerm_application_insights.main.app_id
-    "ApplicationInsights-ConnectionString"   = azurerm_application_insights.main.connection_string
   }
 
   terraform_identity = {

@@ -24,4 +24,5 @@ variable "terraform_identity" {
 }
 variable "secrets" {
   type = map(string)
+  default = {}
 }
