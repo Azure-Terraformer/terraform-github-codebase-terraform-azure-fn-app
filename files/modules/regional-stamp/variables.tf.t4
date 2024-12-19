@@ -10,7 +10,7 @@ variable "number" {
 variable "os_type" {
   type = string
 }
-variable "sku_name" {
+variable "service_plan_id" {
   type = string
 }
 variable "tags" {
@@ -24,10 +24,4 @@ variable "terraform_identity" {
 }
 variable "secrets" {
   type = map(string)
-}
-variable "service_plan_id" {
-  type = string
-}
-variable "os_type" {
-  type = string
 }
