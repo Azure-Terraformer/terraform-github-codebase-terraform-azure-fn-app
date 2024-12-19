@@ -31,6 +31,8 @@ resource "github_repository_file" "terraform_tfvars" {
   content = templatefile("${path.module}/files/terraform.tfvars.t4",
     {
       primary_location = var.primary_location
+      os_type          = var.os_type
+      core_name        = var.core_name
     }
   )
   commit_message      = "Managed by Terraform"

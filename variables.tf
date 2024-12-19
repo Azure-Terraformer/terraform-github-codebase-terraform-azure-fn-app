@@ -17,3 +17,9 @@ variable "commit_user" {
 variable "primary_location" {
   type = string
 }
+variable "os_type" {
+  type = string
+}
+variable "core_name" {
+  type = string
+}
