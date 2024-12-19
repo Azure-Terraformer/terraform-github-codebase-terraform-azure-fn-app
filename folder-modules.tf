@@ -3,6 +3,7 @@ locals {
     "identity.tf",
     "keyvault.tf",
     "main.tf",
+    "outputs.tf",
     "variables.tf",
     "versions.tf"
   ]
