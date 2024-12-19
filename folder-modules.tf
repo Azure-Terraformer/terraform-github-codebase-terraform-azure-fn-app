@@ -1,5 +1,7 @@
 locals {
   modules_folder_files = [
+    "function-linux.tf",
+    "function-windows.tf",
     "identity.tf",
     "keyvault.tf",
     "main.tf",
