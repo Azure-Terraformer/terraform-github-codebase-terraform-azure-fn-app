@@ -3,6 +3,6 @@ data "azurerm_service_plan" "primary" {
   resource_group_name = "rg-${var.core_name}-${var.environment_name}-${var.primary_location}"
 }
 data "azurerm_key_vault" "primary" {
-  name                = "kv-${var.core_name}1"
+  name                = "kv-${var.core_name}-${var.environment_name}1"
   resource_group_name = "rg-${var.core_name}-${var.environment_name}-${var.primary_location}"
 }
