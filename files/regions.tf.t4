@@ -1,0 +1,24 @@
+
+module "region_stamp_primary" {
+
+  source = "./modules/regional-stamp"
+
+  location        = var.primary_location
+  name            = "${var.application_name}-${var.environment_name}"
+  number          = 1
+  os_type         = var.os_type
+  service_plan_id = data.azurerm_service_plan.primary.id
+  tags            = local.all_tags
+
+  secrets = {
+    "ApplicationInsights-InstrumentationKey" = azurerm_application_insights.main.instrumentation_key
+    "ApplicationInsights-AppId"              = azurerm_application_insights.main.app_id
+    "ApplicationInsights-ConnectionString"   = azurerm_application_insights.main.connection_string
+  }
+
+  terraform_identity = {
+    tenant_id = data.azurerm_client_config.current.tenant_id
+    object_id = data.azurerm_client_config.current.object_id
+  }
+
+}

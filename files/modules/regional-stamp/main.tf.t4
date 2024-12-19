@@ -29,10 +29,10 @@ resource "azurerm_linux_function_app" "main" {
 
   storage_account_name            = azurerm_storage_account.function_storage.name
   storage_uses_managed_identity   = true
-  service_plan_id                 = var.app_service_plan_id
+  service_plan_id                 = var.service_plan_id
   key_vault_reference_identity_id = azurerm_user_assigned_identity.function.principal_id
 
-  identity { 
+  identity {
     type = "UserAssigned"
     identity_ids = [
       azurerm_user_assigned_identity.function.principal_id

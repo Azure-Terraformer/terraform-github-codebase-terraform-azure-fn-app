@@ -1,5 +1,6 @@
 locals {
   modules_folder_files = [
+    "identity.tf",
     "keyvault.tf",
     "main.tf",
     "variables.tf",

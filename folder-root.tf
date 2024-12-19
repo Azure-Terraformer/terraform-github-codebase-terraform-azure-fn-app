@@ -1,7 +1,7 @@
 locals {
   root_folder_files = [
+    "core.tf",
     "main.tf",
-    "observability.tf",
     "regions.tf",
     "variables.tf",
     "versions.tf"

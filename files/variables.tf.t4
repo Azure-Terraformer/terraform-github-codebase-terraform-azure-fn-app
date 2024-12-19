@@ -10,3 +10,6 @@ variable "primary_location" {
 variable "os_type" {
   type = string
 }
+variable "core_name" {
+  type = string
+}

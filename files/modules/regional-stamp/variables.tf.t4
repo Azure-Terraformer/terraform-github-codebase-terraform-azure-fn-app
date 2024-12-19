@@ -25,7 +25,7 @@ variable "terraform_identity" {
 variable "secrets" {
   type = map(string)
 }
-variable "app_service_plan_id" {
+variable "service_plan_id" {
   type = string
 }
 variable "os_type" {
