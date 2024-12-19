@@ -13,3 +13,7 @@ variable "os_type" {
 variable "core_name" {
   type = string
 }
+variable "additional_tags" {
+  type = map(string)
+  default = {}
+}
