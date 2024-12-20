@@ -3,6 +3,7 @@ locals {
     "core.tf",
     "function-linux.tf",
     "function-windows.tf",
+    "health-probes.tf",
     "identity.tf",
     "keyvault.tf",
     "main.tf",
