@@ -10,8 +10,12 @@ variable "number" {
 variable "os_type" {
   type = string
 }
-variable "service_plan_id" {
-  type = string
+variable "core" {
+  type = object({
+    service_plan_id = string
+    key_vault_id    = string
+    key_vault_name  = string
+  })
 }
 variable "tags" {
   type = map(string)

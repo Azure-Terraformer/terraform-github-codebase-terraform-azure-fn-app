@@ -6,9 +6,17 @@ resource "azurerm_user_assigned_identity" "function" {
 
 }
 
-resource "azurerm_role_assignment" "function_keyvault_reader" {
+resource "azurerm_role_assignment" "function_keyvault_app_reader" {
 
   scope                = azurerm_key_vault.main.id
+  role_definition_name = "Key Vault Reader"
+  principal_id         = azurerm_user_assigned_identity.function.principal_id
+
+}
+
+resource "azurerm_role_assignment" "function_keyvault_core_reader" {
+
+  scope                = var.core.key_vault_id
   role_definition_name = "Key Vault Reader"
   principal_id         = azurerm_user_assigned_identity.function.principal_id
 

@@ -9,7 +9,7 @@ resource "azurerm_windows_function_app" "main" {
 
   storage_account_name            = azurerm_storage_account.function.name
   storage_uses_managed_identity   = true
-  service_plan_id                 = var.service_plan_id
+  service_plan_id                 = var.core.service_plan_id
   key_vault_reference_identity_id = azurerm_user_assigned_identity.function.id
 
   identity {
@@ -30,8 +30,8 @@ resource "azurerm_windows_function_app" "main" {
   }
 
   app_settings = {
-    "SCM_DO_BUILD_DURING_DEPLOYMENT" = "false"
-    "WEBSITE_RUN_FROM_PACKAGE"       = "1"
+    "WEBSITE_RUN_FROM_PACKAGE"       = 1
+    "APPINSIGHTS_INSTRUMENTATIONKEY" = "@Microsoft.KeyVault(VaultName=${var.core.key_vault_name};SecretName=ApplicationInsights-InstrumentationKey;)"
   }
 
 }
