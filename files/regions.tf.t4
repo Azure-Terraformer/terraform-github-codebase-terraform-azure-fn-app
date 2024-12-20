@@ -3,17 +3,14 @@ module "region_stamp_primary" {
 
   source = "./modules/regional-stamp"
 
-  location = var.primary_location
-  name     = "${var.application_name}-${var.environment_name}"
-  number   = 1
-  os_type  = var.os_type
-  tags     = local.all_tags
-
-  core = {
-    service_plan_id = data.azurerm_service_plan.primary.id
-    key_vault_id    = data.azurerm_key_vault.primary.id
-    key_vault_name  = data.azurerm_key_vault.primary.name
-  }
+  location         = var.primary_location
+  application_name = var.application_name
+  environment_name = var.environment_name
+  core_name        = var.core_name
+  name             = "${var.application_name}-${var.environment_name}"
+  number           = 1
+  os_type          = var.os_type
+  tags             = local.all_tags
 
   secrets = {
   }

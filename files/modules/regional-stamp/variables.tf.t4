@@ -4,18 +4,20 @@ variable "location" {
 variable "name" {
   type = string
 }
+variable "application_name" {
+  type = string
+}
+variable "environment_name" {
+  type = string
+}
+variable "core_name" {
+  type = string
+}
 variable "number" {
   type = number
 }
 variable "os_type" {
   type = string
-}
-variable "core" {
-  type = object({
-    service_plan_id = string
-    key_vault_id    = string
-    key_vault_name  = string
-  })
 }
 variable "tags" {
   type = map(string)
@@ -27,6 +29,6 @@ variable "terraform_identity" {
   })
 }
 variable "secrets" {
-  type = map(string)
+  type    = map(string)
   default = {}
 }
