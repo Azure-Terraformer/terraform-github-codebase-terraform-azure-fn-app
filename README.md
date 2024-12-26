@@ -1,1 +1,7 @@
-# terraform-github-codebase-terraform-azure-function-application
+# Overview
+
+This Terraform module automates the provisioning and configuration of an Azure Function App codebase within a specified GitHub repository. Building upon the foundational Azure Function Core module, it leverages the resources provisioned by the core module as data sources to create a robust, scalable, and secure function app infrastructure. The module sets up essential Terraform configuration files, including core.tf, main.tf, outputs.tf, regions.tf, variables.tf, and versions.tf, ensuring a standardized project structure. 
+
+Additionally, it configures environment-specific Terraform variable files (terraform.tfvars) and regional stamp modules that provision Azure Function Apps tailored to either Windows or Linux environments based on the specified OS type. Each regional stamp includes a user-assigned managed identity, necessary role assignments granting access to regional Key Vaults and storage accounts, and App Insights health probes for monitoring. 
+
+By managing these configurations through Terraform and committing them to the GitHub repository, the module ensures consistent, repeatable, and secure deployments of Azure Function Apps, seamlessly integrating within the GitHub AT-AT framework for efficient automation of Terraform and Azure-based projects.
