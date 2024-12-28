@@ -1,16 +1,16 @@
-run "setup" {
+run "arrange" {
   module {
     source = "./tests/setup"
   }
 }
 
-run "codebase" {
+run "act" {
   module {
     source = "./"
   }
 
   variables {
-    repository       = run.setup.repository_name
+    repository       = run.arrange.repository_name
     branch           = "main"
     path             = "src"
     primary_location = "westus3"
@@ -24,13 +24,13 @@ run "codebase" {
 
 }
 
-run "final" {
+run "assert" {
   module {
     source = "./tests/final"
   }
 
   variables {
-    endpoint = "https://www.github.com/${run.setup.username}/${run.setup.repository_name}/blob/main/README.md"
+    endpoint = "https://www.github.com/${run.arrange.username}/${run.arrange.repository_name}/blob/main/README.md"
   }
 
   assert {
