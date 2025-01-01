@@ -32,3 +32,6 @@ variable "secrets" {
   type    = map(string)
   default = {}
 }
+variable "eventgrid_subscriptions_enabled" {
+  type = bool
+}
