@@ -1,6 +1,7 @@
 locals {
   modules_folder_files = [
     "core.tf",
+    "eventgrid.tf",
     "function-linux.tf",
     "function-windows.tf",
     "health-probes.tf",
@@ -8,6 +9,8 @@ locals {
     "keyvault.tf",
     "main.tf",
     "outputs.tf",
+    "storage-data.tf",
+    "storage-ops.tf",
     "variables.tf",
     "versions.tf"
   ]
