@@ -21,6 +21,18 @@ resource "azurerm_role_assignment" "eventgrid_internal_pub" {
 
 }
 
+/* 
+ * Allow Application Code to publish to External EventGrid Topic.
+ * The C# Code explicitly references the User Assigned Managed Identity
+ * When it uses the EventGridClient to publish events.
+ */
+resource "azurerm_role_assignment" "eventgrid_external_pub" {
+
+  scope                = data.azurerm_eventgrid_topic.core.id
+  role_definition_name = "EventGrid Data Sender"
+  principal_id         = azurerm_user_assigned_identity.function.principal_id
+
+}
 
 /***************************** S U B ************************************/
 # Allow Application Code to subscribe to Internal EventGrid Topic

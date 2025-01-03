@@ -41,6 +41,7 @@ resource "azurerm_windows_function_app" "main" {
     "STORAGE_BLOB_CONNECTION_STRING"         = azurerm_storage_account.data.primary_connection_string
     "STORAGE_QUEUE_CONNECTION_STRING"        = azurerm_storage_account.data.primary_connection_string
     "EVENTGRID_INTERNAL_ENDPOINT"            = azurerm_eventgrid_topic.main.endpoint
+    "EVENTGRID_EXTERNAL_ENDPOINT"            = data.azurerm_eventgrid_topic.core.endpoint
   }
 
 }
