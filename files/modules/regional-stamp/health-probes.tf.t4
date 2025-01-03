@@ -1,3 +1,4 @@
+# Liveness Health Probe
 resource "azurerm_application_insights_standard_web_test" "liveness" {
 
   name                    = "${var.name}-${var.location}-live"
@@ -16,6 +17,7 @@ resource "azurerm_application_insights_standard_web_test" "liveness" {
 
 }
 
+# Readiness Health Probe
 resource "azurerm_application_insights_standard_web_test" "readiness" {
 
   name                    = "${var.name}-${var.location}-ready"

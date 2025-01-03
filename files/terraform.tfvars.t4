@@ -1,3 +1,4 @@
-primary_location = "${primary_location}"
-os_type          = "${os_type}"
-core_name        = "${core_name}"
+primary_location                = "${primary_location}"
+os_type                         = "${os_type}"
+core_name                       = "${core_name}"
+eventgrid_subscriptions_enabled = false

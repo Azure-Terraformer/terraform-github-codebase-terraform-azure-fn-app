@@ -17,3 +17,6 @@ variable "additional_tags" {
   type = map(string)
   default = {}
 }
+variable "eventgrid_subscriptions_enabled" {
+  type = bool
+}
